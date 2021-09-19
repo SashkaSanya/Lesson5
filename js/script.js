@@ -24,17 +24,21 @@ const movieDB = {
 	]
 };
 
-let advertisement = document.querySelector('.promo__adv');
-let genre = document.querySelector('.promo__genre');
+let advertisement = document.querySelectorAll('.promo__adv img');
 let bg = document.querySelector('.promo__bg');
+let genre = bg.querySelector('.promo__genre');
 let list = document.querySelectorAll('.promo__interactive-item');
 let arr = movieDB.movies.sort();
 
 
-// console.log(list[0]);
-// advertisement.style.visibility = 'hidden';
-advertisement.style.display = 'none';
+console.log(advertisement);
+
+advertisement.forEach(item => {
+	item.remove();
+});
+
 genre.textContent = 'драма';
+
 bg.style.backgroundImage = 'url(img/bg.jpg)';
 
 arr.forEach((item, i) => {
